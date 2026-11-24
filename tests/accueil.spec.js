@@ -53,6 +53,15 @@ const OUTILS = [
   },
 ];
 
+// Les logiciels à installer, hors de l'arc-en-ciel, en graphite : visibles de tous.
+const LOGICIELS = [
+  {
+    nom: 'Anonymiseur',
+    url: 'https://gharel.github.io/anonymiseur/',
+    icone: 'anonymiseur.svg',
+  },
+];
+
 // Les outils de l'équipe, en vert Skazy : seulement dans l'extension (page ouverte avec ?equipe).
 const EQUIPE = [
   {
@@ -155,9 +164,9 @@ test('le bouton « Remonter en haut » apparaît après défilement et ramène e
 
 test('les huit outils, dans l’ordre de l’arc-en-ciel, avec leur favicon', async ({ page }) => {
   await ouvrir(page);
-  const cartes = page.locator('.carte:visible');
+  const cartes = page.locator('#outils .carte');
   await expect(cartes).toHaveCount(OUTILS.length);
-  const lanceur = page.locator('.lanceur__lien:visible');
+  const lanceur = page.locator('#titre-lanceur + .lanceur__liste .lanceur__lien');
   await expect(lanceur).toHaveCount(OUTILS.length);
   for (const [i, outil] of OUTILS.entries()) {
     const carte = cartes.nth(i);
@@ -174,6 +183,31 @@ test('les huit outils, dans l’ordre de l’arc-en-ciel, avec leur favicon', as
       `assets/img/outils/${outil.icone}`,
     );
   }
+});
+
+test('les logiciels, en graphite, après l’arc-en-ciel et visibles de tous', async ({ page }) => {
+  await ouvrir(page);
+  const cartes = page.locator('#logiciels .carte');
+  await expect(cartes).toHaveCount(LOGICIELS.length);
+  const lanceur = page.locator('#titre-lanceur-logiciels + .lanceur__liste .lanceur__lien');
+  await expect(lanceur).toHaveCount(LOGICIELS.length);
+  for (const [i, logiciel] of LOGICIELS.entries()) {
+    const carte = cartes.nth(i);
+    await expect(carte).toBeVisible();
+    await expect(carte).toHaveAttribute('data-couleur', 'logiciel');
+    await expect(carte.locator('.carte__lien')).toHaveText(logiciel.nom);
+    await expect(carte.locator('.carte__lien')).toHaveAttribute('href', logiciel.url);
+    await expect(carte.locator('.carte__ouvrir')).toHaveText('Télécharger');
+    await expect(carte.locator('.pastille')).toHaveAttribute(
+      'src',
+      `assets/img/outils/${logiciel.icone}`,
+    );
+    await expect(lanceur.nth(i)).toBeVisible();
+    await expect(lanceur.nth(i)).toHaveAttribute('href', logiciel.url);
+  }
+  // Toutes les cartes visibles : l'arc-en-ciel, puis les logiciels.
+  await expect(page.locator('.carte:visible')).toHaveCount(OUTILS.length + LOGICIELS.length);
+  await expect(page.locator('.carte:visible').last()).toHaveAttribute('data-couleur', 'logiciel');
 });
 
 test('les outils de l’équipe n’apparaissent que dans l’extension (?equipe)', async ({ page }) => {
@@ -198,8 +232,11 @@ test('les outils de l’équipe n’apparaissent que dans l’extension (?equipe
     );
     await expect(lanceur.nth(i)).toHaveAttribute('href', outil.url);
   }
-  // Les outils de l'arc-en-ciel restent à leur place, avant ceux de l'équipe.
-  await expect(page.locator('.outils:not(.equipe) .carte')).toHaveCount(OUTILS.length);
+  // L'arc-en-ciel et les logiciels restent à leur place, avant les outils de l'équipe.
+  await expect(page.locator('.outils:not(.equipe) .carte')).toHaveCount(
+    OUTILS.length + LOGICIELS.length,
+  );
+  await expect(page.locator('main > section:last-child')).toHaveId('equipe');
 });
 
 test('dans l’extension, chaque outil s’ouvre dans tout l’onglet', async ({ page }) => {

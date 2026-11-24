@@ -6,7 +6,7 @@
     <title>Les outils · Skazy Formation</title>
     <meta
       name="description"
-      content="Les huit outils de Skazy Formation : Vigie, Quiz, Mini-jeux, Atelier d’exercices IA, L’IA en schémas, Permis IA, Prompthèque et Captif."
+      content="Les huit outils de Skazy Formation : Vigie, Quiz, Mini-jeux, Atelier d’exercices IA, L’IA en schémas, Permis IA, Prompthèque et Captif, et le logiciel Anonymiseur."
     />
     <!-- Outils réservés aux stagiaires et à l'équipe : la page n'apparaît pas dans les moteurs de recherche. -->
     <meta name="robots" content="noindex" />
@@ -18,7 +18,7 @@
     <meta property="og:title" content="Les outils · Skazy Formation" />
     <meta
       property="og:description"
-      content="Vigie, Quiz, Mini-jeux, Atelier d’exercices IA, L’IA en schémas, Permis IA, Prompthèque et Captif, au même endroit."
+      content="Vigie, Quiz, Mini-jeux, Atelier d’exercices IA, L’IA en schémas, Permis IA, Prompthèque, Captif et l’Anonymiseur, au même endroit."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
@@ -112,6 +112,16 @@
           d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-370.7 105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
         />
       </symbol>
+      <symbol id="i-download" viewBox="0 0 448 512">
+        <path
+          d="M256 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 210.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 242.7 256 32zM64 320c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-46.9 0-56.6 56.6c-31.2 31.2-81.9 31.2-113.1 0L110.9 320 64 320zm304 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+        />
+      </symbol>
+      <symbol id="i-desktop" viewBox="0 0 512 512">
+        <path
+          d="M64 32C28.7 32 0 60.7 0 96L0 352c0 35.3 28.7 64 64 64l144 0-16 48-72 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l272 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-72 0-16-48 144 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 32zM96 96l320 0c17.7 0 32 14.3 32 32l0 160c0 17.7-14.3 32-32 32L96 320c-17.7 0-32-14.3-32-32l0-160c0-17.7 14.3-32 32-32z"
+        />
+      </symbol>
       <symbol id="i-briefcase" viewBox="0 0 512 512">
         <path
           d="M200 48l112 0c4.4 0 8 3.6 8 8l0 40-128 0 0-40c0-4.4 3.6-8 8-8zm-56 8l0 40-80 0C28.7 96 0 124.7 0 160l0 96 512 0 0-96c0-35.3-28.7-64-64-64l-80 0 0-40c0-30.9-25.1-56-56-56L200 0c-30.9 0-56 25.1-56 56zM512 304l-192 0 0 16c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-16-192 0 0 112c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-112z"
@@ -170,8 +180,9 @@
             <p class="heros__chapo">
               Animez vos séances avec le Quiz et les <span class="insecable">Mini-jeux</span>,
               faites pratiquer l’IA avec l’Atelier d’exercices et la Prompthèque, expliquez-la avec
-              le Permis IA et L’IA en schémas, faites composer vos évaluations sur Captif et suivez
-              les appels d’offres avec Vigie.
+              le Permis IA et L’IA en schémas, faites composer vos évaluations sur Captif, suivez
+              les appels d’offres avec Vigie et masquez les données personnelles avec l’Anonymiseur
+              avant de les confier à une IA.
             </p>
           </div>
 
@@ -276,6 +287,21 @@
                     alt=""
                   />
                   Captif
+                </a>
+              </li>
+            </ul>
+            <p class="lanceur__titre" id="titre-lanceur-logiciels">Logiciels</p>
+            <ul class="lanceur__liste" aria-labelledby="titre-lanceur-logiciels">
+              <li>
+                <a class="lanceur__lien" href="https://gharel.github.io/anonymiseur/" target="_top">
+                  <img
+                    class="pastille"
+                    src="assets/img/outils/anonymiseur.svg"
+                    width="56"
+                    height="56"
+                    alt=""
+                  />
+                  Anony&shy;miseur
                 </a>
               </li>
             </ul>
@@ -824,6 +850,76 @@
           </li>
         </ul>
       </section>
+
+      <section class="outils" id="logiciels" aria-labelledby="titre-logiciels">
+        <div class="outils__entete">
+          <h2 id="titre-logiciels">Logiciels</h2>
+          <p>
+            À installer sur l’ordinateur, en gris graphite pour les distinguer des outils en ligne.
+            Ils fonctionnent sans connexion à Internet&nbsp;: vos fichiers ne quittent pas votre
+            poste.
+          </p>
+        </div>
+
+        <ul class="grille">
+          <li>
+            <article class="carte" data-couleur="logiciel">
+              <div class="carte__barre"></div>
+              <div class="carte__corps">
+                <div class="carte__haut">
+                  <img
+                    class="pastille"
+                    src="assets/img/outils/anonymiseur.svg"
+                    width="52"
+                    height="52"
+                    alt=""
+                  />
+                  <span class="badge">Masquer</span>
+                </div>
+                <h3 class="carte__titre">
+                  <a class="carte__lien" href="https://gharel.github.io/anonymiseur/" target="_top"
+                    >Anonymiseur</a
+                  >
+                </h3>
+                <p class="carte__accroche">
+                  Remplace les données personnelles d’un document par des balises avant de le
+                  confier à une IA, puis remet les vraies valeurs dans sa réponse.
+                </p>
+                <ul class="carte__points">
+                  <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-check" /></svg>
+                    Word, Excel, PowerPoint, PDF, OpenDocument et images
+                  </li>
+                  <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-check" /></svg>
+                    Bilan avant l’envoi&nbsp;: personne ne reste reconnaissable
+                  </li>
+                  <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-check" /></svg>
+                    Ctrl+Alt+M masque le texte copié, Ctrl+Alt+R le restaure
+                  </li>
+                </ul>
+                <div class="carte__pied">
+                  <ul class="carte__infos">
+                    <li>
+                      <svg class="icone" aria-hidden="true"><use href="#i-users" /></svg>
+                      Formateur et apprenants
+                    </li>
+                    <li>
+                      <svg class="icone" aria-hidden="true"><use href="#i-desktop" /></svg>
+                      Windows et macOS, sans Internet
+                    </li>
+                  </ul>
+                  <span class="carte__ouvrir" aria-hidden="true">
+                    Télécharger <svg class="icone"><use href="#i-download" /></svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+
       <section class="outils equipe" id="equipe" aria-labelledby="titre-equipe">
         <div class="outils__entete">
           <h2 id="titre-equipe">Pour l’équipe</h2>

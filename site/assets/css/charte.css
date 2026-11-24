@@ -5,7 +5,8 @@
  * Chaque outil garde sa couleur de l'arc-en-ciel à huit teintes (rouge, orange, jaune, vert,
  * turquoise, bleu, indigo, violet, toujours dans cet ordre), celle de son favicon : --outil-a → --outil-b
  * (dégradé), --outil-texte (texte, contraste AA sur la surface et sur --outil-pale). Les outils de
- * l'équipe (design-skazy) ont tous le vert Skazy.
+ * l'équipe (design-skazy) ont tous le vert Skazy ; les logiciels à installer (Anonymiseur), hors
+ * de l'arc-en-ciel, le gris graphite.
  */
 
 @font-face {
@@ -99,6 +100,13 @@
   --skazy-a: #6db898;
   --skazy-b: #3d7a62;
 
+  /* Les logiciels à installer : graphite, celui de leur pastille. Le foncé garde 2,2:1 au moins
+     sur les fonds sombres (comme l'arc-en-ciel) et 3:1 au moins sous l'icône blanche. */
+  --logiciel-a: #7d8791;
+  --logiciel-b: #525b65;
+  --logiciel-texte: #495057;
+  --logiciel-pale: #e9ecef;
+
   /* Typographie */
   --police: 'Georama', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   --texte-xs: 0.75rem;
@@ -173,6 +181,8 @@
     --indigo-pale: #26244a;
     --violet-texte: #d991f2;
     --violet-pale: #311f4b;
+    --logiciel-texte: #ced4da;
+    --logiciel-pale: #2f3439;
   }
 }
 
@@ -211,6 +221,8 @@
   --indigo-pale: #26244a;
   --violet-texte: #d991f2;
   --violet-pale: #311f4b;
+  --logiciel-texte: #ced4da;
+  --logiciel-pale: #2f3439;
 }
 
 /*
@@ -275,4 +287,10 @@
   --outil-b: var(--skazy-b);
   --outil-texte: var(--primaire-texte);
   --outil-pale: var(--primaire-pale);
+}
+[data-couleur='logiciel'] {
+  --outil-a: var(--logiciel-a);
+  --outil-b: var(--logiciel-b);
+  --outil-texte: var(--logiciel-texte);
+  --outil-pale: var(--logiciel-pale);
 }

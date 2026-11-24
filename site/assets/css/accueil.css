@@ -288,7 +288,7 @@ button {
 
 /* Accès direct : les pastilles des outils, comme sur l'écran d'accueil d'un téléphone. Quatre par
    ligne, sur toutes les largeurs (4 + 4 pour l'arc-en-ciel) : huit sur une ligne couperait
-   « Prompthèque ». Les tuiles de l'équipe gardent la même taille. */
+   « Prompthèque ». Les tuiles des logiciels et de l'équipe gardent la même taille. */
 .lanceur__titre {
   margin-bottom: var(--e-3);
   font-size: var(--texte-xs);
@@ -302,7 +302,8 @@ button {
   --lanceur-ecart: var(--e-3);
   --lanceur-tuile: calc((100% - 3 * var(--lanceur-ecart)) / 4);
 }
-.lanceur__titre.equipe {
+/* Les groupes qui suivent l'arc-en-ciel : logiciels, puis équipe. */
+.lanceur__liste + .lanceur__titre {
   margin-top: var(--e-6);
 }
 
