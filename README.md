@@ -19,7 +19,7 @@ Une rubrique « Logiciels », hors de l’arc-en-ciel et en gris graphite, prés
 | ----------- | ---------------------------------------------------------------------- | ------------------------------------- |
 | Anonymiseur | Masquer : données personnelles remplacées par des balises avant une IA | https://gharel.github.io/anonymiseur/ |
 
-**En ligne : https://gharel.github.io/home/**
+**En ligne : https://gharel.github.io/pro/**
 
 Dans le nouvel onglet de l’extension (dossier `www/extension`, qui ouvre la page avec `?equipe`), une partie « Pour l’équipe » s’ajoute, en vert Skazy :
 
