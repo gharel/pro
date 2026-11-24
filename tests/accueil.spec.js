@@ -85,6 +85,7 @@ const EQUIPE = [
     icone: 'mini-crm.svg',
   },
   { nom: 'Skills IA', url: 'https://gharel.github.io/skills/', icone: 'skills-ia.svg' },
+  { nom: 'Veilles automatisées', url: 'https://github.com/gharel/veille', icone: 'veilles.svg' },
 ];
 
 const ECRANS = [

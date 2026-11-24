@@ -30,6 +30,7 @@ Dans le nouvel onglet de l’extension (dossier `www/extension`, qui ouvre la pa
 | Design Skazy         | Concevoir : le design system (dépôt privé)                   | https://github.com/gharel/design-skazy     |
 | Mini CRM             | Relancer : brouillons Gmail des relances clients             | déploiement de test `/dev` du projet `crm` |
 | Skills IA            | Produire : plan, support et quiz avec les assistants         | https://gharel.github.io/skills/           |
+| Veilles automatisées | Surveiller : appels d’offres, emploi, IA (dépôt privé)       | https://github.com/gharel/veille           |
 
 Elle est masquée, pas secrète : ses liens sont dans le code de la page, et ces outils demandent le compte de Guillaume.
 
